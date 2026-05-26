@@ -1,0 +1,16 @@
+{
+  "name": "@nexus/profile-and-account",
+  "version": "0.0.0-stub",
+  "private": true,
+  "description": "STUB — Profile editor, connected accounts, sessions/devices, account export. To be implemented per NEXUS_PORTFOLIO_RUNTIME_SPEC §11 #2.",
+  "__substrate_stub": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "build": "echo 'stub lego'",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

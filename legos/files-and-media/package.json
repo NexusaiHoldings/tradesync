@@ -1,0 +1,16 @@
+{
+  "name": "@nexus/files-and-media",
+  "version": "0.0.0-stub",
+  "private": true,
+  "description": "STUB — Upload, image processing, virus scan, signed URLs, CSV import/export. To be implemented per NEXUS_PORTFOLIO_RUNTIME_SPEC §11 #10.",
+  "__substrate_stub": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "build": "echo 'stub lego'",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

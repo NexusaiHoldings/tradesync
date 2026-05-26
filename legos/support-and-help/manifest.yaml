@@ -1,0 +1,19 @@
+# support-and-help lego — STUB manifest
+# Spec authority: NEXUS_PORTFOLIO_RUNTIME_SPEC.md §11 capability #7.
+name: support-and-help
+version: 0.0.0-stub
+description: >
+  STUB. KB, in-app widget, ticketing, AI deflection, changelog, feedback.
+maintainer: nexus-platform
+status: stub
+
+compatibility:
+  min_runtime: 1.0.0
+  min_nexus_spec: 2.1.0
+
+depends_on: []
+slots: []
+config_schema:
+  type: object
+  properties: {}
+  additionalProperties: true

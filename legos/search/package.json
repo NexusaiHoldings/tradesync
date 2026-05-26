@@ -1,0 +1,16 @@
+{
+  "name": "@nexus/search",
+  "version": "0.0.0-stub",
+  "private": true,
+  "description": "STUB — Global cmd+K, faceted filters, sort, pagination, saved searches. To be implemented per NEXUS_PORTFOLIO_RUNTIME_SPEC §11 #8.",
+  "__substrate_stub": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "build": "echo 'stub lego'",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@nexus/onboarding",
+  "version": "0.0.0-stub",
+  "private": true,
+  "description": "STUB — Welcome flow, tour, checklist, sample data, role-based first-run. To be implemented per NEXUS_PORTFOLIO_RUNTIME_SPEC §11 #9.",
+  "__substrate_stub": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "build": "echo 'stub lego'",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

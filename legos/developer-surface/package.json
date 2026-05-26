@@ -1,0 +1,16 @@
+{
+  "name": "@nexus/developer-surface",
+  "version": "0.0.0-stub",
+  "private": true,
+  "description": "STUB — API keys, webhooks, rate limiting, sandbox, auto-gen docs, OAuth apps. To be implemented per NEXUS_PORTFOLIO_RUNTIME_SPEC §11 #12.",
+  "__substrate_stub": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "build": "echo 'stub lego'",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

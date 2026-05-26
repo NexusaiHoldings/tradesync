@@ -1,0 +1,19 @@
+# social-and-engagement lego — STUB manifest
+# Spec authority: NEXUS_PORTFOLIO_RUNTIME_SPEC.md §11 capability #14.
+name: social-and-engagement
+version: 0.0.0-stub
+description: >
+  STUB. Comments, reactions, shares, referrals, reviews, public profiles, follow graph.
+maintainer: nexus-platform
+status: stub
+
+compatibility:
+  min_runtime: 1.0.0
+  min_nexus_spec: 2.1.0
+
+depends_on: []
+slots: []
+config_schema:
+  type: object
+  properties: {}
+  additionalProperties: true

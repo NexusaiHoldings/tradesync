@@ -1,0 +1,16 @@
+{
+  "name": "@nexus/social-and-engagement",
+  "version": "0.0.0-stub",
+  "private": true,
+  "description": "STUB — Comments, reactions, shares, referrals, reviews, public profiles, follow graph. To be implemented per NEXUS_PORTFOLIO_RUNTIME_SPEC §11 #14.",
+  "__substrate_stub": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "build": "echo 'stub lego'",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
