@@ -20,6 +20,7 @@
     "@types/pg": "^8.11.0",
     "pg": "^8.11.0",
     "@nexus/identity-and-access": "*",
-    "@nexus-substrate/runtime-client": "*"
+    "@nexus-substrate/runtime-client": "*",
+    "twilio": "^4.23.0"
   }
 }
