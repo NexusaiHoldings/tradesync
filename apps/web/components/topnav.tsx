@@ -5,9 +5,9 @@
  * link manifest from apps/web/lib/nav-config.ts so agents can extend
  * the nav by editing config, not by re-implementing the component.
  *
- * Per the Spec the substrate ships with just a Home entry; per
- * cto-prompt-nav-requirement-001, CTO's F1-001 extends NAV_CONFIG
- * to include the company's specific feature paths.
+ * Per the Spec the substrate ships with a flat NAV_CONFIG (NavItem[]).
+ * Agents extend it by adding entries to the array in nav-config.ts;
+ * they do not re-shape the manifest here.
  *
  * Server component — zero client JS bundled.
  */
@@ -15,7 +15,7 @@
 import Link from "next/link";
 import type { JSX } from "react";
 
-import { NAV_CONFIG, type NavLink, type NavGroup } from "@/lib/nav-config";
+import { NAV_CONFIG, type NavItem } from "@/lib/nav-config";
 
 export function TopNav(): JSX.Element {
   const companyName = process.env.COMPANY_NAME || "Portfolio Company";
@@ -56,21 +56,18 @@ export function TopNav(): JSX.Element {
           flexWrap: "wrap",
         }}
       >
-        {NAV_CONFIG.primary.map((link) => (
-          <NavItem key={link.href} {...link} />
-        ))}
-        {NAV_CONFIG.groups.map((group) => (
-          <NavGroupItem key={group.label} group={group} />
+        {NAV_CONFIG.map((item) => (
+          <NavItemLink key={item.href} item={item} />
         ))}
       </div>
     </nav>
   );
 }
 
-function NavItem({ href, label }: NavLink): JSX.Element {
+function NavItemLink({ item }: { item: NavItem }): JSX.Element {
   return (
     <Link
-      href={href}
+      href={item.href}
       style={{
         padding: "6px 12px",
         borderRadius: 6,
@@ -80,45 +77,7 @@ function NavItem({ href, label }: NavLink): JSX.Element {
         fontWeight: 500,
       }}
     >
-      {label}
+      {item.label}
     </Link>
-  );
-}
-
-function NavGroupItem({ group }: { group: NavGroup }): JSX.Element {
-  return (
-    <span
-      style={{
-        display: "inline-flex",
-        alignItems: "center",
-        gap: 6,
-        padding: "6px 12px",
-        borderRadius: 6,
-        fontSize: 14,
-        color: "rgba(0,0,0,0.6)",
-      }}
-    >
-      <span style={{ fontWeight: 600 }}>{group.label}:</span>
-      {group.links.map((link, idx) => (
-        <span
-          key={link.href}
-          style={{ display: "inline-flex", alignItems: "center" }}
-        >
-          {idx > 0 && (
-            <span style={{ margin: "0 4px", opacity: 0.4 }}>·</span>
-          )}
-          <Link
-            href={link.href}
-            style={{
-              color: "var(--substrate-accent, #2563eb)",
-              textDecoration: "none",
-              fontWeight: 500,
-            }}
-          >
-            {link.label}
-          </Link>
-        </span>
-      ))}
-    </span>
   );
 }
