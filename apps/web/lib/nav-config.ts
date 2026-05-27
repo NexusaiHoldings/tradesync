@@ -1,28 +1,43 @@
 /**
- * Top Navigation Configuration — Tradesync (operator-healed shape).
+ * Top Navigation Configuration — Tradesync (substrate canonical shape).
  *
- * Companion to the operator's topnav.tsx self-heal at sha 1446cc20:
- * Tradesync's topnav.tsx was rewritten to `NAV_CONFIG.map(item)` over
- * a flat `NavItem[]`. This file matches that shape so the company
- * stays live.
+ * Restored to the substrate contract by tradesync-substrate-realign-001
+ * (2026-05-26). F1-001's original rewrite renamed NavLink -> NavItem,
+ * dropped NavGroup + NavConfig, and flattened NAV_CONFIG to NavItem[],
+ * which broke the substrate's topnav.tsx import. This file + topnav.tsx
+ * are restored together to the substrate's {primary, groups} shape with
+ * the canonical NavLink / NavGroup / NavConfig exports preserved.
  *
- * Substrate canonical shape (NavLink / NavGroup / NavConfig with
- * primary+groups) is preserved in the substrate template and is
- * the contract every NEW portfolio company must honor. Restoring
- * Tradesync to the substrate shape requires updating both files
- * together — tracked in substrate-shared-file-shape-contract-001.
+ * Agents extending nav-config.ts must keep these four exports and the
+ * NAV_CONFIG object shape (substrate-shared-file-shape-contract-001).
  */
 
-export interface NavItem {
-  label: string;
+export type NavLink = {
+  /** URL path (without route-group parens). */
   href: string;
-  icon?: string;
-}
+  /** Visible label. */
+  label: string;
+};
 
-export const NAV_CONFIG: NavItem[] = [
-  { label: "Dashboard", href: "/" },
-  { label: "Calls", href: "/calls" },
-  { label: "Calendar", href: "/calendar" },
-  { label: "Contacts", href: "/contacts" },
-  { label: "Analytics", href: "/analytics" },
-];
+export type NavGroup = {
+  /** Group label (e.g. "Account", "Admin"). */
+  label: string;
+  /** Child links shown inline (flat) inside the group. */
+  links: NavLink[];
+};
+
+export type NavConfig = {
+  primary: NavLink[];
+  groups: NavGroup[];
+};
+
+export const NAV_CONFIG: NavConfig = {
+  primary: [
+    { href: "/",          label: "Dashboard" },
+    { href: "/calls",     label: "Calls" },
+    { href: "/calendar",  label: "Calendar" },
+    { href: "/contacts",  label: "Contacts" },
+    { href: "/analytics", label: "Analytics" },
+  ],
+  groups: [],
+};
